@@ -3,9 +3,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-#include <algorithm> // used for vector sort
-#include <iomanip> // output format setw
 #include <string.h>
 
 #include "Person.h"
@@ -13,26 +10,32 @@
 
 using namespace std;
 
-void readInfo(string filename, vector<Person *> &fptr)
+void readInfo(string filename, vector<Person* > &fptr)
 {
-    string fname, lname, gender;
-    int month, day, year;
+  int linenum = 1;
+  
+  string text, firstname, lastname, sex;
+  int Year, Month, Day;
 
-    int linenum = 1;
+  Person* p;
 
-    string text;
+  ifstream file(filename);
 
-    ifstream myfile(filename);
+  if (file.is_open())
+  {
+    while (getline(file, text))
+    { 
+      istringstream sinput(text);
 
-    if (myfile.is_open())
-    {
-        while(getline(myfile, text))
-        {
-            Person input(fname, lname, gender, year, month, day);
+      sinput >> firstname >> lastname >> sex >> Year >> Month >> Day;
 
-            fptr.emplace_back(input);
-        }
+      p = new Person(firstname, lastname, sex, Month, Day, Year);
+
+      fptr.push_back(p);
     }
-};
 
-// How do I write this info to a vector?
+    file.close();
+  }
+  else
+    cout << "Unable to read file\n";
+};

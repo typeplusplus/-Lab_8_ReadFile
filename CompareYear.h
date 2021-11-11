@@ -1,5 +1,5 @@
-#ifndef COMPAREMONTH_H
-#define COMPAREMONTH_H
+#ifndef COMPAREYEAR_H
+#define COMPAREYEAR_H
 
 #include <iostream>
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class CompareMonth : public Person
+class CompareYear : public Person
 {
     public:
         bool operator() (Person *a, Person *b);

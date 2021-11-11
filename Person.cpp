@@ -1,8 +1,11 @@
 #include <iostream>
+#include <iomanip>
 
 #include "Person.h"
 
 using namespace std;
+
+Person::Person() {};
 
 Person::Person(string fn, string ln, string s, int m, int d, int y)
 {
@@ -15,13 +18,14 @@ Person::Person(string fn, string ln, string s, int m, int d, int y)
     year = y;
 }
 
-void const Person::printinfo()
+void Person::printInfo()
 {
-    cout << "First name: " << fname 
-             << " Last name: " << lname 
-             << " Gender: " << gender 
-             << " Birthday: " << month << "/" << day << "/" << year << endl;
-    //Output vector that calls this function? or call this function for each person in the vector
+      cout << setw(10) << fname
+           << setw(10) << lname
+           << setw(2) << gender
+           << setw(10) << month
+           << setw(10) << day
+           << setw(10) << year << endl;
 }
 
 int Person::getMonth()
@@ -37,9 +41,4 @@ int Person::getYear()
 string Person::getLastName()
 {
     return lname;
-}
-
-string Person::getFirstName()
-{
-    return fname;
 }

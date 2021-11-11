@@ -8,6 +8,6 @@
 
 using namespace std;
 
-void readInfo(string filename, vector<Person *> fptr);
+void readInfo(string filename, vector<Person *> &fptr);
 
 #endif

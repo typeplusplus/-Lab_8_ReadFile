@@ -9,6 +9,7 @@
 #include "Person.h"
 #include "CompareMonth.h"
 #include "CompareYear.h"
+#include "CompareLastName.h"
 
 using namespace std;
 

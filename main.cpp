@@ -32,4 +32,5 @@ int main()
   printSortInfo(fptr, -1); //No sort
   printSortInfo(fptr, 0); //Sorted by month
   printSortInfo(fptr, 1); //Sorted by year
+  printSortInfo(fptr, 2); //Sorted by last name
 }

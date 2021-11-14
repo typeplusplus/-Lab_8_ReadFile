@@ -4,6 +4,7 @@
 #include <iomanip>  // output format setw
 
 #include "Person.h"
+#include "CompareLastName.h"
 #include "CompareMonth.h"
 #include "CompareYear.h"
 
@@ -24,6 +25,11 @@ void printSortInfo(vector<Person *> &fptr, int flag)
   {
     cout << "\nPrint out sorted vector by Year\n";
     sort(fptr.begin(), fptr.end(), CompareYear());
+  }
+  else if(flag == 2)
+  {
+    cout << "\nPrint out sorted vector by Last Name\n";
+    sort(fptr.begin(), fptr.end(), CompareLastName());
   }
   else
     sort(fptr.begin(), fptr.end());
